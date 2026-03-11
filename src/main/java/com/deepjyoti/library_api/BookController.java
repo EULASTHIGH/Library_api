@@ -31,4 +31,8 @@ public class BookController {
         Book saved = bookService.addBook(authorId,book);
         return ResponseEntity.status(201).body(saved);
     }
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable Integer id){
+        return bookService.getBookById(id);
+    }
 }
